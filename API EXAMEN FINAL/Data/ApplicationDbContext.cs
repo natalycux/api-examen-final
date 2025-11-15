@@ -16,7 +16,7 @@ namespace API_EXAMEN_FINAL.Data
 
         // ?? Define el DbSet para la tabla
         // Si el examen pide "Productos", cambia a: public DbSet<Producto> Productos { get; set; }
-        public DbSet<Item> Items { get; set; }
+        public DbSet<ChatMensaje> ChatMensajes { get; set; }
 
         // ?? Si necesitas más tablas, agrégalas aquí:
         // public DbSet<OtraTabla> OtraTablas { get; set; }
@@ -28,6 +28,8 @@ namespace API_EXAMEN_FINAL.Data
             // ?? Configuración adicional si es necesaria
             // Por ejemplo, especificar el nombre de la tabla si difiere del DbSet:
             // modelBuilder.Entity<Item>().ToTable("NombreTablaReal");
+            modelBuilder.Entity<ChatMensaje>()
+                .ToTable("Chat_Mensaje", "dbo");
         }
     }
 }

@@ -45,7 +45,7 @@ namespace API_EXAMEN_FINAL.Controllers
         /// Obtiene un mensaje específico por ID
         /// </summary>
         [HttpGet("{id}")]
-        public async Task<ActionResult<ChatMensaje>> GetMensaje(int id)
+        public async Task<ActionResult<ChatMensaje>> GetMensaje(long id)
         {
             try
             {
@@ -72,7 +72,7 @@ namespace API_EXAMEN_FINAL.Controllers
         /// Obtiene mensajes de una sala específica
         /// </summary>
         [HttpGet("sala/{codSala}")]
-        public async Task<ActionResult<IEnumerable<ChatMensaje>>> GetMensajesPorSala(int codSala)
+        public async Task<ActionResult<IEnumerable<ChatMensaje>>> GetMensajesPorSala(long codSala)
         {
             try
             {

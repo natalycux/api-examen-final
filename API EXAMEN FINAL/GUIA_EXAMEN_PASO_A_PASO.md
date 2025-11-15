@@ -259,47 +259,7 @@ git log --oneline
 
 ---
 
-### 2?? CREAR BASE DE DATOS EN AZURE (SQL Database)
 
-1. Ve a https://portal.azure.com
-2. Busca "SQL databases" en la barra superior
-3. Clic en **+ Create**
-4. Configuración:
-   - **Subscription**: Tu suscripción (Student o la que tengas)
-   - **Resource group**: Crea uno nuevo ? `rg-examen-final`
-   - **Database name**: `db-examen-final`
-   - **Server**: Clic en "Create new"
-     - **Server name**: `sql-examen-TU-NOMBRE` (debe ser único)
-     - **Location**: East US (o el más cercano)
-     - **Authentication**: Use SQL authentication
-     - **Server admin login**: `adminexamen`
-     - **Password**: `Examen2024!` (o tu contraseña segura)
-     - Clic en **OK**
-   - **Compute + storage**: Clic en "Configure database"
-     - Selecciona **Basic** (el más económico: ~$5/mes)
-     - Clic en **Apply**
-5. Clic en **Review + create** ? **Create**
-6. ? Espera 3-5 minutos a que se cree
-
-7. **IMPORTANTE**: Configurar Firewall
-   - Ve a tu servidor SQL creado: `sql-examen-TU-NOMBRE`
-   - En el menú izquierdo: **Security** ? **Networking**
-   - **Firewall rules**:
-     - ? Marca "Allow Azure services and resources to access this server"
-     - Clic en **+ Add your client IPv4 address** (para acceder desde tu PC)
-   - Clic en **Save**
-
-8. **Guardar cadena de conexión**:
-   - Ve a tu base de datos `db-examen-final`
-   - En el menú izquierdo: **Settings** ? **Connection strings**
-   - Copia la cadena **ADO.NET**
-   - Se verá algo así:
-   ```
-   Server=tcp:sql-examen-TU-NOMBRE.database.windows.net,1433;Initial Catalog=db-examen-final;Persist Security Info=False;User ID=adminexamen;Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
-   ```
-   - **Reemplaza `{your_password}` con tu contraseña real**: `Examen2024!`
-
----
 
 ### 3?? ACTUALIZAR APPSETTINGS.JSON CON TU CADENA DE AZURE
 

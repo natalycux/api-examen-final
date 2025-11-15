@@ -1,0 +1,297 @@
+# ? ¿QUÉ GUÍA DEBO SEGUIR? - DIAGRAMA DE DECISIÓN
+
+## ?? PREGUNTA CLAVE ANTES DEL EXAMEN
+
+**Pregunta a tu profesor o revisa las especificaciones del examen:**
+
+> "¿Debo crear mi propia base de datos o me darán una existente?"
+
+---
+
+## ?? DIAGRAMA DE DECISIÓN
+
+```
+                    ???????????????????????????
+                    ?   INICIO - LEE ESTO    ?
+                    ?   README.md            ?
+                    ???????????????????????????
+                                 ?
+                    ???????????????????????????
+                    ?  ¿QUÉ DICE EL EXAMEN?  ?
+                    ???????????????????????????
+                                 ?
+        ???????????????????????????????????????????????????
+        ?                                                  ?
+?????????????????????????                    ??????????????????????????
+? "Conecta tu API a     ?                    ? "Crea una API REST     ?
+?  esta base de datos:" ?                    ?  con base de datos     ?
+?                       ?                    ?  en Azure"             ?
+? Te dan:               ?                    ?                        ?
+? - Cadena conexión     ?                    ? Tú creas:              ?
+? - Usuario/Password    ?                    ? - SQL Database         ?
+? - Tabla ya existe     ?                    ? - Tablas               ?
+?????????????????????????                    ??????????????????????????
+            ?                                          ?
+?????????????????????????????????      ????????????????????????????????
+?   ESCENARIO A: BD EXISTENTE   ?      ?   ESCENARIO B: CREAR BD      ?
+?   ? MÁS COMÚN (90%)          ?      ?   (10% de los casos)         ?
+?????????????????????????????????      ????????????????????????????????
+            ?                                     ?
+?????????????????????????????????      ????????????????????????????????
+? GUIA_EXAMEN_BD_EXISTENTE.md   ?      ? GUIA_EXAMEN_PASO_A_PASO.md   ?
+?                               ?      ?                              ?
+? ? Más corta (15 min)         ?      ? ?? Más completa (45 min)     ?
+? ? Sin crear BD               ?      ? ?? Crear SQL Database        ?
+? ? Sin migraciones            ?      ? ?? Configurar firewall       ?
+? ? Solo mapear tablas         ?      ? ?? Hacer migraciones         ?
+? ? Tiempo: 35-45 min          ?      ? ?? Tiempo: 60+ min           ?
+?????????????????????????????????      ????????????????????????????????
+            ?                                     ?
+            ???????????????????????????????????????
+                           ?
+              ??????????????????????????
+              ? CHECKLIST_EXAMEN.md    ?
+              ? Verificar que TODO     ?
+              ? esté listo             ?
+              ??????????????????????????
+                           ?
+              ??????????????????????????
+              ?   DÍA DEL EXAMEN       ?
+              ? REFERENCIA_RAPIDA      ?
+              ??????????????????????????
+```
+
+---
+
+## ?? IDENTIFICAR TU ESCENARIO
+
+### ?? ESCENARIO A: Base de Datos Existente (? Más Común)
+
+**Indicadores:**
+- ? "Conecta tu API a la siguiente base de datos..."
+- ? Te dan una cadena de conexión
+- ? Te dan usuario y contraseña
+- ? "La tabla X ya contiene datos..."
+- ? "Usa la base de datos del servidor universitario..."
+- ? No mencionan "crea una base de datos"
+
+**Tu trabajo:**
+1. Conectarte a la BD existente
+2. Crear modelos que mapeen las tablas
+3. Crear API CRUD
+4. Subir API a Azure (solo la aplicación)
+
+**Guía a seguir:**
+- ?? **GUIA_EXAMEN_BD_EXISTENTE.md**
+
+**Ventajas:**
+- ?? Más rápido (35-45 min total)
+- ?? Menos configuración
+- ? Directo al código
+
+---
+
+### ?? ESCENARIO B: Crear Base de Datos desde Cero
+
+**Indicadores:**
+- ? "Crea una API REST completa con base de datos en Azure"
+- ? "Diseña tu propia base de datos..."
+- ? "Crea las tablas necesarias..."
+- ? No te dan cadena de conexión
+- ? Es un proyecto completamente nuevo
+
+**Tu trabajo:**
+1. Crear SQL Database en Azure
+2. Configurar firewall
+3. Crear modelos
+4. Hacer migraciones (crear tablas)
+5. Crear API CRUD
+6. Subir API a Azure
+
+**Guía a seguir:**
+- ?? **GUIA_EXAMEN_PASO_A_PASO.md**
+
+**Consideraciones:**
+- ?? Más tiempo (60+ min total)
+- ?? Más configuración en Azure
+- ?? Costo de SQL Database (~$5/mes)
+
+---
+
+## ?? COMPARACIÓN LADO A LADO
+
+| Aspecto | ESCENARIO A: BD Existente | ESCENARIO B: Crear BD |
+|---------|---------------------------|----------------------|
+| **Guía** | GUIA_EXAMEN_BD_EXISTENTE.md | GUIA_EXAMEN_PASO_A_PASO.md |
+| **Tiempo lectura** | 15 min | 45 min |
+| **Tiempo examen** | 35-45 min | 60+ min |
+| **Crear BD Azure** | ? NO | ? SÍ |
+| **Configurar Firewall** | ? NO | ? SÍ |
+| **Migraciones EF** | ? NO | ? SÍ |
+| **Mapear tablas** | ? SÍ | ? NO (las creas tú) |
+| **Cadena conexión** | Te la dan | Tú la generas |
+| **Azure App Service** | ? SÍ | ? SÍ |
+| **GitHub Deployment** | ? SÍ | ? SÍ |
+| **Complejidad** | ?? Baja | ?? Media |
+| **Probabilidad** | ? 90% | 10% |
+
+---
+
+## ?? EJEMPLOS DE ENUNCIADOS
+
+### Ejemplo 1: BD Existente (Escenario A)
+```
+EXAMEN FINAL - API REST
+
+Crear una API REST en ASP.NET Core para gestionar productos.
+
+CONEXIÓN A BASE DE DATOS:
+- Server: sql-universidad.database.windows.net
+- Database: Inventario
+- User: estudiante
+- Password: Examen2024!
+
+La tabla "Productos" ya existe con las siguientes columnas:
+- Id (int, PK)
+- Nombre (nvarchar(100))
+- Precio (decimal(18,2))
+- Stock (int)
+
+REQUERIMIENTOS:
+- Implementar CRUD completo
+- Publicar en Azure
+- Entregar URL de Swagger
+
+Tiempo: 60 minutos
+```
+
+**?? Usa: GUIA_EXAMEN_BD_EXISTENTE.md**
+
+---
+
+### Ejemplo 2: Crear BD (Escenario B)
+```
+EXAMEN FINAL - API REST
+
+Crear una API REST completa en ASP.NET Core para un sistema
+de biblioteca.
+
+REQUERIMIENTOS:
+- Crear base de datos en Azure SQL
+- Diseñar tabla "Libros" con:
+  * Id (clave primaria)
+  * Titulo (máximo 200 caracteres)
+  * Autor (máximo 100 caracteres)
+  * ISBN (máximo 20 caracteres)
+  * AnioPublicacion (entero)
+  * Disponible (booleano)
+
+- Implementar CRUD completo
+- Usar Entity Framework con migraciones
+- Publicar en Azure
+- Entregar URL de Swagger
+
+Tiempo: 90 minutos
+```
+
+**?? Usa: GUIA_EXAMEN_PASO_A_PASO.md**
+
+---
+
+## ?? SEÑALES DE ALERTA
+
+### ?? Definitivamente es BD Existente si:
+- Te dan credenciales de BD en el enunciado
+- Dicen "la tabla X ya contiene..."
+- Te dan una cadena de conexión
+- Mencionan "servidor de la universidad"
+
+### ?? Definitivamente debes Crear BD si:
+- Dicen explícitamente "crea una base de datos"
+- No te dan credenciales
+- Dicen "diseña tu propia base de datos"
+- Mencionan "usa Azure SQL Database"
+
+### ?? No está claro (PREGUNTA AL PROFESOR):
+- Solo dicen "crea una API REST"
+- No mencionan base de datos
+- No especifican conexión
+
+---
+
+## ?? RECOMENDACIÓN
+
+### Si NO SABES cuál será tu escenario:
+
+1. **Prepara AMBOS escenarios** (para estar seguro):
+   - Lee GUIA_EXAMEN_BD_EXISTENTE.md (15 min)
+   - Lee GUIA_EXAMEN_PASO_A_PASO.md (45 min)
+   - Total: 60 min de lectura
+
+2. **Pero enfócate en BD Existente** (es más probable):
+   - Practica conectarte a una BD existente
+   - Practica mapear tablas con `[Table]` y `[Column]`
+   - Practica SIN migraciones
+
+3. **El día del examen:**
+   - Lee el enunciado completo primero
+   - Identifica el escenario
+   - Sigue la guía correspondiente
+
+---
+
+## ?? PREGUNTA A TU PROFESOR
+
+Antes del examen, pregunta:
+
+> "Profesor, para el examen:
+> - ¿Nos dará una base de datos existente para conectarnos?
+> - ¿O debemos crear nuestra propia base de datos en Azure?"
+
+Según la respuesta:
+- **BD existente** ? Estudia GUIA_EXAMEN_BD_EXISTENTE.md
+- **Crear BD** ? Estudia GUIA_EXAMEN_PASO_A_PASO.md
+- **Ambas** ? Estudia ambas guías
+
+---
+
+## ? CHECKLIST DE PREPARACIÓN
+
+### Para BD Existente:
+- [ ] ? Leída GUIA_EXAMEN_BD_EXISTENTE.md
+- [ ] ? Sé usar `[Table]` y `[Column]`
+- [ ] ? Sé crear modelos sin migraciones
+- [ ] ? Sé probar conexión a BD remota
+- [ ] ? GitHub configurado
+- [ ] ? Azure Web App creada
+
+### Para Crear BD:
+- [ ] ? Leída GUIA_EXAMEN_PASO_A_PASO.md
+- [ ] ? Sé crear SQL Database en Azure
+- [ ] ? Sé configurar firewall
+- [ ] ? Sé hacer migraciones con EF
+- [ ] ? Sé aplicar migraciones
+- [ ] ? GitHub configurado
+- [ ] ? Azure Web App creada
+
+---
+
+## ?? CONCLUSIÓN
+
+**Lo más probable es que tu examen sea ESCENARIO A (BD Existente)**, porque:
+1. Es más común en exámenes prácticos
+2. Ahorra tiempo de configuración
+3. Se enfoca en el código de la API
+4. El profesor controla la base de datos
+
+**Pero prepárate para ambos** por si acaso.
+
+---
+
+**?? Siguiente paso:** 
+1. Pregunta a tu profesor cuál será el escenario
+2. Abre y lee la guía correspondiente
+3. Sigue los pasos de preparación
+4. Marca el CHECKLIST_EXAMEN.md
+
+**?? ¡Éxito en tu examen! ??**

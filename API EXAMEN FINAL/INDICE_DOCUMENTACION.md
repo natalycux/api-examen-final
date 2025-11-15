@@ -1,33 +1,84 @@
 # ?? ÍNDICE DE DOCUMENTACIÓN - EXAMEN FINAL
 
+## ?? **INFORMACIÓN IMPORTANTE DEL EXAMEN**
+
+### ?? **El examen incluye:**
+- ? **Backend API** (.NET, Node.js u otro)
+- ? **Frontend** (HTML/JS, React, Vue, etc.)
+- ? **Base de datos** (SQL Server - te la proporcionan)
+- ? **TODO publicado online** (Azure, Vercel, Netlify, etc.)
+
+### ?? **Flujo completo a implementar:**
+```
+BD SQL Server ? Backend API ? Frontend ? Deploy Online
+(Te la dan)     (Crear)       (Crear)    (Publicar)
+```
+
+---
+
 ## ?? EMPIEZA AQUÍ
 
 Si es tu primera vez usando esta plantilla, **lee los documentos en este orden:**
 
 ### ?? FASE 1: PREPARACIÓN (Antes del examen)
+
 ```
-1. README.md                          ? Vista general del proyecto
-2. GUIA_EXAMEN_PASO_A_PASO.md       ? IMPORTANTE: Configurar Azure y GitHub
-3. CHECKLIST_EXAMEN.md               ? Verificar que TODO esté listo
+1. README.md                                ? Vista general del proyecto
+
+2. ?? PREGUNTA IMPORTANTE:
+   ¿El examen incluye SOLO backend o backend + frontend?
+   
+   ? BACKEND + FRONTEND (examen completo):
+     ?? GUIA_COMPLETA_BACKEND_FRONTEND.md   ? ? LEE ESTA PRIMERO
+     
+   ? SOLO BACKEND:
+     GUIA_EXAMEN_BD_EXISTENTE.md            ? Si te dan BD existente
+     O GUIA_EXAMEN_PASO_A_PASO.md           ? Si debes crear BD
+     
+3. CHECKLIST_EXAMEN.md                     ? Verificar que TODO esté listo
 ```
 
 ### ?? FASE 2: DURANTE EL EXAMEN
 ```
-4. REFERENCIA_RAPIDA_VISUAL.md      ? Imprime esto, úsalo durante el examen
-5. COMANDOS_RAPIDOS.md               ? Ten esto abierto en una pestaña
-6. EJEMPLOS_ESCENARIOS.md            ? Consulta si tu caso es similar
+4. GUIA_COMPLETA_BACKEND_FRONTEND.md       ? Guía paso a paso completa
+5. REFERENCIA_RAPIDA_VISUAL.md             ? Referencia rápida backend
+6. COMANDOS_RAPIDOS.md                     ? Comandos esenciales
+7. EJEMPLOS_ESCENARIOS.md                  ? Ejemplos de código
 ```
 
 ### ?? FASE 3: SI ALGO FALLA
 ```
-7. AZURE_DEPLOYMENT_INFO.md         ? Troubleshooting de Azure
-8. Log Stream en Azure Portal        ? Ver errores en tiempo real
-9. GitHub Actions logs               ? Ver errores de deployment
+8. TROUBLESHOOTING_GIT.md                  ? Problemas con Git
+9. AZURE_DEPLOYMENT_INFO.md                ? Troubleshooting de Azure
+10. Log Stream en Azure Portal             ? Ver errores en tiempo real
+11. GitHub Actions logs                    ? Ver errores de deployment
 ```
 
 ---
 
 ## ?? DESCRIPCIÓN DE CADA DOCUMENTO
+
+### ?? `GUIA_COMPLETA_BACKEND_FRONTEND.md` (30 min de lectura) ? NUEVO - ESENCIAL
+**Para qué:** Guía completa para el examen que incluye backend + frontend  
+**Cuándo usar:** Si tu examen requiere crear backend API + frontend  
+**Contenido:**
+- ? Información completa del examen
+- ? Distribución del tiempo (backend 45 min + frontend 50 min)
+- ? Backend: Conectar a BD, crear API, CRUD completo
+- ? Frontend: HTML + JavaScript (plantilla completa)
+- ? Consumir API desde el frontend
+- ? Deploy backend (Azure) + frontend (Vercel/Netlify/GitHub Pages)
+- ? Configurar CORS
+- ? Checklist completo
+- ?? **Tiempo estimado total: 2-3 horas**
+
+**?? USA ESTA GUÍA SI:**
+- Tu examen incluye backend + frontend
+- Debes crear el flujo completo: BD ? API ? Frontend
+- Debes publicar todo online
+- **Este es tu escenario actual según la información del profesor**
+
+---
 
 ### ?? `README.md` (5 min de lectura)
 **Para qué:** Entender qué es esta plantilla y cómo funciona  
@@ -41,20 +92,40 @@ Si es tu primera vez usando esta plantilla, **lee los documentos en este orden:*
 
 ---
 
-### ?? `GUIA_EXAMEN_PASO_A_PASO.md` (30-45 min de lectura + configuración)
-**Para qué:** Configurar Azure, GitHub y hacer el primer deployment  
-**Cuándo leer:** HOY, antes del examen  
+### ?? `GUIA_EXAMEN_BD_EXISTENTE.md` (15 min de lectura)
+**Para qué:** Guía corta si SOLO necesitas backend (BD ya existe)  
+**Cuándo usar:** Si el examen es SOLO backend y te dan BD existente  
+**Contenido:**
+- ? Configurar conexión a BD existente
+- ? Crear modelos sin migraciones
+- ? Mapear tablas existentes
+- ? CRUD con datos existentes
+- ? Deployment solo de la API
+- ?? **Tiempo estimado: 35-45 min**
+
+**?? USA ESTA GUÍA SI:**
+- Solo necesitas backend (sin frontend)
+- Te dan una cadena de conexión
+- La tabla ya existe en la BD
+
+---
+
+### ?? `GUIA_EXAMEN_PASO_A_PASO.md` (45 min de lectura + configuración)
+**Para qué:** Guía completa si debes crear backend desde cero con tu propia BD  
+**Cuándo usar:** Si debes crear tu propia base de datos en Azure (solo backend)  
 **Contenido:**
 - ? Crear SQL Database en Azure
 - ? Crear Web App en Azure
 - ? Configurar Firewall
 - ? Conectar GitHub con Azure
 - ? Configurar Deployment Center
-- ? Primera migración
+- ? Crear migraciones
 - ? Verificación completa
-- ? Workflow del día del examen
 
-**?? CRÍTICO: Debes completar esta guía ANTES del examen**
+**?? USA ESTA GUÍA SI:**
+- Solo necesitas backend (sin frontend)
+- Debes crear tu propia BD en Azure
+- Necesitas hacer migraciones
 
 ---
 
@@ -73,10 +144,10 @@ Si es tu primera vez usando esta plantilla, **lee los documentos en este orden:*
 ---
 
 ### ?? `REFERENCIA_RAPIDA_VISUAL.md` (Referencia constante)
-**Para qué:** Tener a mano durante el examen como guía rápida  
+**Para qué:** Tener a mano durante el examen como guía rápida (backend)  
 **Cuándo usar:** DURANTE el examen (abierto en una pestaña o impreso)  
 **Contenido:**
-- Flujo visual de trabajo (45 min)
+- Flujo visual de trabajo backend (45 min)
 - Plantillas de código para copiar/pegar
 - Comandos esenciales
 - Atajos de teclado
@@ -96,16 +167,16 @@ Si es tu primera vez usando esta plantilla, **lee los documentos en este orden:*
 - Comandos Entity Framework
 - Comandos dotnet
 - Comandos Azure CLI
+- Comandos npm/vercel/netlify
 - Secuencia típica
 - Comandos de emergencia
-- URLs importantes
 
 **?? TIP: Ten esto abierto en Visual Studio en una pestaña**
 
 ---
 
 ### ?? `EJEMPLOS_ESCENARIOS.md` (Consulta según necesites)
-**Para qué:** Ver ejemplos completos de implementaciones  
+**Para qué:** Ver ejemplos completos de implementaciones backend  
 **Cuándo usar:** Si tu caso es similar o necesitas inspiración  
 **Contenido:**
 - Escenario 1: API de Productos
@@ -113,6 +184,17 @@ Si es tu primera vez usando esta plantilla, **lee los documentos en este orden:*
 - Escenario 3: API de Libros
 - Escenario 4: Con relaciones entre entidades
 - Código completo de cada ejemplo
+
+---
+
+### ?? `TROUBLESHOOTING_GIT.md` (Consulta si hay problemas)
+**Para qué:** Solucionar problemas con Git  
+**Cuándo usar:** Si `git add .` u otro comando falla  
+**Contenido:**
+- Soluciones detalladas para errores de Git
+- Guía paso a paso desde cero
+- Alternativa: Usar GitHub Desktop
+- Script de diagnóstico
 
 ---
 
@@ -125,46 +207,51 @@ Si es tu primera vez usando esta plantilla, **lee los documentos en este orden:*
 - Deployment Center
 - Monitoreo y logs
 - Troubleshooting detallado
-- Costos estimados
+
+---
+
+### ?? `QUE_GUIA_SEGUIR.md` (Diagrama de decisión)
+**Para qué:** Decidir qué guía seguir según tu escenario  
+**Cuándo usar:** Si no sabes qué guía leer primero  
+**Contenido:**
+- Diagrama de decisión visual
+- Comparación de escenarios
+- Ejemplos de enunciados
 
 ---
 
 ### ?? `preparar-examen.ps1` (Script - ejecutar una vez)
 **Para qué:** Verificar que tienes todo instalado y configurado  
 **Cuándo ejecutar:** Después de leer la guía, antes del examen  
-**Cómo ejecutar:**
-```powershell
-.\preparar-examen.ps1
-```
 **Qué hace:**
-- Verifica .NET SDK
-- Verifica Git
-- Verifica EF Core Tools
-- Restaura paquetes
-- Compila el proyecto
+- Verifica .NET SDK, Git, EF Core Tools
+- Restaura paquetes y compila
 - Verifica configuración de Git
-- Muestra próximos pasos
 
 ---
 
 ### ?? `deploy-examen.ps1` (Script - usar durante examen)
-**Para qué:** Automatizar todo el proceso de deployment  
+**Para qué:** Automatizar el deployment del backend  
 **Cuándo ejecutar:** Durante el examen, después de editar el código  
-**Cómo ejecutar:**
-```powershell
-.\deploy-examen.ps1 -NombreEntidad "Producto"
-```
 **Qué hace:**
-- Compila el proyecto
-- Crea migración
-- Aplica migración a BD
-- Git add + commit
-- Git push
-- Te dice cuándo estará listo en Azure
+- Compila, crea migración, aplica a BD
+- Git add + commit + push
+- Trigger auto-deployment a Azure
 
 ---
 
-## ??? MAPA DE NAVEGACIÓN
+### ?? `diagnostico-git.ps1` (Script - troubleshooting)
+**Para qué:** Diagnosticar problemas con Git  
+**Cuándo ejecutar:** Si tienes problemas con Git  
+**Qué hace:**
+- Verifica instalación de Git
+- Verifica configuración
+- Verifica repositorio
+- Ofrece soluciones automáticas
+
+---
+
+## ??? MAPA DE NAVEGACIÓN ACTUALIZADO
 
 ```
 ???????????????????????????????????????????????????????????????
@@ -173,179 +260,171 @@ Si es tu primera vez usando esta plantilla, **lee los documentos en este orden:*
 ???????????????????????????????????????????????????????????????
                        ?
         ????????????????????????????????
-        ? ¿Qué fase estás?            ?
+        ? ¿Qué incluye tu examen?     ?
         ????????????????????????????????
                        ?
-       ?????????????????????????????????
-       ?                               ?
-???????????????              ???????????????????
-? ANTES DEL   ?              ? DURANTE EL      ?
-? EXAMEN      ?              ? EXAMEN          ?
-???????????????              ???????????????????
-       ?                               ?
-1. GUIA_EXAMEN_         4. REFERENCIA_RAPIDA_
-   PASO_A_PASO.md          VISUAL.md (IMPRIME)
-       ?                               ?
-2. preparar-examen.ps1   5. COMANDOS_RAPIDOS.md
-       ?                               ?
-3. CHECKLIST_           6. deploy-examen.ps1
-   EXAMEN.md                (cuando termines)
-       ?                               ?
-   ? LISTO                     ? VERIFICAR EN AZURE
+       ?????????????????????????????????????
+       ?                                   ?
+???????????????????            ????????????????????
+? BACKEND +       ?            ? SOLO             ?
+? FRONTEND        ?            ? BACKEND          ?
+? (Completo)      ?            ?                  ?
+???????????????????            ????????????????????
+         ?                               ?
+GUIA_COMPLETA_         QUE_GUIA_SEGUIR.md
+BACKEND_FRONTEND.md                     ?
+         ?                    ???????????????????????
+    ? LEE ESTA              ?                     ?
+         ?           GUIA_EXAMEN_     GUIA_EXAMEN_
+    (Backend +       BD_EXISTENTE     PASO_A_PASO
+     Frontend +           (BD dada)    (Crear BD)
+     Deploy)
+         ?
+??????????????????????
+? CHECKLIST_EXAMEN   ?
+??????????????????????
+         ?
+??????????????????????
+? DÍA DEL EXAMEN     ?
+? Sigue la guía      ?
+? paso a paso        ?
+??????????????????????
 ```
 
 ---
 
-## ?? ESTIMACIÓN DE TIEMPO
-
-### Preparación (Antes del examen):
-- Leer README.md: **5 min**
-- Leer y seguir GUIA_EXAMEN_PASO_A_PASO.md: **45 min**
-- Ejecutar preparar-examen.ps1: **2 min**
-- Verificar CHECKLIST_EXAMEN.md: **10 min**
-- Familiarizarse con REFERENCIA_RAPIDA_VISUAL.md: **10 min**
-- **TOTAL: ~70 minutos** (1 hora y 10 minutos)
-
-### Durante el examen:
-- Seguir flujo en REFERENCIA_RAPIDA_VISUAL.md: **45 min**
-- Buffer para imprevistos: **15 min**
-- **TOTAL: ~60 minutos**
-
----
-
-## ?? PRIORIDADES POR DOCUMENTO
+## ?? PRIORIDADES ACTUALIZADAS
 
 ### ?? CRÍTICOS (Debes leerlos SÍ o SÍ):
-1. README.md
-2. GUIA_EXAMEN_PASO_A_PASO.md
-3. CHECKLIST_EXAMEN.md
-4. REFERENCIA_RAPIDA_VISUAL.md
+1. **README.md** - Entender el proyecto
+2. **GUIA_COMPLETA_BACKEND_FRONTEND.md** ? ? **TU EXAMEN ES ESTE**
+3. **CHECKLIST_EXAMEN.md** - Verificar preparación
 
-### ?? IMPORTANTES (Muy útiles):
-5. COMANDOS_RAPIDOS.md
-6. EJEMPLOS_ESCENARIOS.md
+### ?? IMPORTANTES (Muy útiles durante el examen):
+4. **REFERENCIA_RAPIDA_VISUAL.md** - Referencia rápida backend
+5. **COMANDOS_RAPIDOS.md** - Comandos esenciales
+6. **EJEMPLOS_ESCENARIOS.md** - Código de ejemplo
 
 ### ?? OPCIONALES (Solo si hay problemas):
-7. AZURE_DEPLOYMENT_INFO.md
+7. **TROUBLESHOOTING_GIT.md** - Problemas con Git
+8. **AZURE_DEPLOYMENT_INFO.md** - Problemas con Azure
+9. **QUE_GUIA_SEGUIR.md** - Si tienes dudas sobre qué guía usar
 
 ---
 
-## ?? PESTAÑAS RECOMENDADAS EN EL NAVEGADOR
+## ?? COMPARACIÓN DE GUÍAS
 
-Durante el examen, ten abiertas estas pestañas:
-
-1. **Azure Portal** - Portal principal
-   - https://portal.azure.com
-   
-2. **GitHub Repositorio** - Ver código
-   - https://github.com/[USER]/api-examen-final
-   
-3. **GitHub Actions** - Ver deployment en tiempo real
-   - https://github.com/[USER]/api-examen-final/actions
-   
-4. **Swagger Azure** - Probar API en producción
-   - https://api-examen-[NOMBRE].azurewebsites.net/swagger
-   
-5. **Esta documentación** - Referencia rápida
-   - REFERENCIA_RAPIDA_VISUAL.md en GitHub o local
+| Guía | Para qué examen | Incluye Backend | Incluye Frontend | Incluye Deploy | Tiempo |
+|------|-----------------|-----------------|------------------|----------------|---------|
+| **GUIA_COMPLETA_BACKEND_FRONTEND** | Backend + Frontend | ? SÍ | ? SÍ | ? Ambos | 2-3h |
+| **GUIA_EXAMEN_BD_EXISTENTE** | Solo Backend | ? SÍ | ? NO | ? Backend | 45min |
+| **GUIA_EXAMEN_PASO_A_PASO** | Solo Backend (crear BD) | ? SÍ | ? NO | ? Backend | 60+min |
 
 ---
 
-## ?? CONSEJOS DE USO
+## ?? ORDEN DE LECTURA PARA TU EXAMEN
 
-### Para estudiar:
-1. Lee README.md para entender el proyecto
-2. Sigue GUIA_EXAMEN_PASO_A_PASO.md paso por paso
-3. Practica cambiando de "Item" a otra entidad
-4. Verifica con CHECKLIST_EXAMEN.md
-
-### Para el examen:
-1. Ten impreso REFERENCIA_RAPIDA_VISUAL.md
-2. Ten abierto en VS Code: COMANDOS_RAPIDOS.md
-3. Consulta EJEMPLOS_ESCENARIOS.md si tu caso es similar
-4. Usa deploy-examen.ps1 para automatizar
-
-### Si algo falla:
-1. Consulta sección TROUBLESHOOTING en REFERENCIA_RAPIDA_VISUAL.md
-2. Revisa AZURE_DEPLOYMENT_INFO.md
-3. Ve a Azure Portal ? Log Stream
-4. Revisa logs en GitHub Actions
-
----
-
-## ?? ORDEN DE LECTURA RECOMENDADO
-
-### Primera sesión (1 hora):
+### Primera sesión (30 min):
 ```
 README.md (5 min)
     ?
-GUIA_EXAMEN_PASO_A_PASO.md (45 min)
+GUIA_COMPLETA_BACKEND_FRONTEND.md (30 min)
     ?
-Ejecutar preparar-examen.ps1 (2 min)
-    ?
+Revisar plantillas de código
+```
+
+### Segunda sesión (20 min):
+```
 CHECKLIST_EXAMEN.md (10 min)
+    ?
+REFERENCIA_RAPIDA_VISUAL.md (10 min)
 ```
 
-### Segunda sesión (30 min):
+### Tercera sesión (Práctica - 2 horas):
 ```
-REFERENCIA_RAPIDA_VISUAL.md (15 min)
+Crear backend con BD de prueba (45 min)
     ?
-COMANDOS_RAPIDOS.md (5 min)
+Crear frontend que consume API (50 min)
     ?
-EJEMPLOS_ESCENARIOS.md (10 min)
+Deploy ambos (15 min)
+    ?
+Probar integración (10 min)
 ```
 
-### Antes del examen (10 min):
-```
-Revisar CHECKLIST_EXAMEN.md
-    ?
-Imprimir REFERENCIA_RAPIDA_VISUAL.md
-    ?
-Verificar que Azure y GitHub funcionen
-```
+---
+
+## ?? TIPS ESPECÍFICOS PARA TU EXAMEN
+
+1. **Backend primero** (45 min) - Es la base del sistema
+2. **Frontend después** (50 min) - Consume el backend
+3. **Deploy al final** (15 min) - Backend ya funciona en Azure, solo falta frontend
+4. **Guarda URLs** a medida que las obtienes
+5. **Frontend simple** es mejor que complejo sin terminar
+6. **Usa plantillas** de código proporcionadas
+7. **CORS configurado** desde el inicio en el backend
 
 ---
 
 ## ?? AYUDA RÁPIDA POR SITUACIÓN
 
 ### "No sé por dónde empezar"
-? Lee **README.md** primero
+? Lee **README.md** y luego **GUIA_COMPLETA_BACKEND_FRONTEND.md**
 
-### "Necesito configurar Azure"
-? Sigue **GUIA_EXAMEN_PASO_A_PASO.md**
+### "Solo necesito backend"
+? Lee **GUIA_EXAMEN_BD_EXISTENTE.md** (más probable)
+
+### "Necesito backend + frontend"
+? Lee **GUIA_COMPLETA_BACKEND_FRONTEND.md** ?
 
 ### "¿Está todo listo?"
 ? Revisa **CHECKLIST_EXAMEN.md**
 
-### "Estoy en el examen, ¿qué hago?"
-? Usa **REFERENCIA_RAPIDA_VISUAL.md**
+### "Estoy en el examen"
+? Sigue **GUIA_COMPLETA_BACKEND_FRONTEND.md** paso a paso
 
 ### "Necesito un comando específico"
 ? Busca en **COMANDOS_RAPIDOS.md**
 
-### "Mi caso es similar a un ejemplo"
-? Mira **EJEMPLOS_ESCENARIOS.md**
+### "Algo falló con Git"
+? Consulta **TROUBLESHOOTING_GIT.md**
 
 ### "Algo falló en Azure"
 ? Consulta **AZURE_DEPLOYMENT_INFO.md**
 
 ---
 
-## ? VERIFICACIÓN FINAL
+## ? VERIFICACIÓN FINAL PARA TU EXAMEN
 
 Antes del examen, asegúrate de haber:
 
-- [ ] ? Leído README.md
-- [ ] ? Completado GUIA_EXAMEN_PASO_A_PASO.md
-- [ ] ? Ejecutado preparar-examen.ps1 sin errores
-- [ ] ? Marcado CHECKLIST_EXAMEN.md
+### Backend:
+- [ ] ? Leída GUIA_COMPLETA_BACKEND_FRONTEND.md (Parte 1)
+- [ ] ? GitHub configurado y funcionando
+- [ ] ? Azure Web App creada
+- [ ] ? Deployment Center conectado con GitHub
+- [ ] ? Sabes crear modelos y controladores CRUD
+- [ ] ? Sabes configurar CORS
+
+### Frontend:
+- [ ] ? Leída GUIA_COMPLETA_BACKEND_FRONTEND.md (Parte 2)
+- [ ] ? Plantillas HTML/CSS/JS descargadas o guardadas
+- [ ] ? Sabes conectar frontend con API (fetch)
+- [ ] ? Sabes hacer deploy a Vercel/Netlify/GitHub Pages
+- [ ] ? Tienes cuenta en Vercel o Netlify (opcional)
+
+### General:
 - [ ] ? Impreso REFERENCIA_RAPIDA_VISUAL.md
-- [ ] ? Probado deploy-examen.ps1 al menos una vez
-- [ ] ? Verificado que Azure funciona
-- [ ] ? Verificado que GitHub Actions funciona
+- [ ] ? COMANDOS_RAPIDOS.md abierto en una pestaña
+- [ ] ? Has practicado el flujo completo al menos una vez
 
 ---
 
-**?? ¡AHORA SÍ ESTÁS LISTO! ??**
+**?? ¡AHORA SÍ ESTÁS LISTO PARA EL EXAMEN COMPLETO! ??**
 
-**Siguiente paso:** Lee **README.md** si aún no lo has hecho.
+**Siguiente paso:** 
+1. Lee **GUIA_COMPLETA_BACKEND_FRONTEND.md** completa
+2. Practica crear backend + frontend
+3. Practica el deploy de ambos
+4. Verifica CHECKLIST_EXAMEN.md
+
+**?? ¡Éxito en tu examen! ??**

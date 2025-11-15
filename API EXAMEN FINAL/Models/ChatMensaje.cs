@@ -8,7 +8,7 @@ namespace API_EXAMEN_FINAL.Models
     {
         [Key]
         [Column("ID_Mensaje")]
-        public int IdMensaje { get; set; }  
+        public long IdMensaje { get; set; }  
 
         [Column("Cod_Sala")]
         public int CodSala { get; set; } 

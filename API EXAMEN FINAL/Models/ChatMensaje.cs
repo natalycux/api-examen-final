@@ -8,10 +8,10 @@ namespace API_EXAMEN_FINAL.Models
     {
         [Key]
         [Column("ID_Mensaje")]
-        public long IdMensaje { get; set; }  // Cambiado a long
+        public int IdMensaje { get; set; }  
 
         [Column("Cod_Sala")]
-        public long CodSala { get; set; }  // Cambiado a long
+        public int CodSala { get; set; } 
 
         [Column("Login_Emisor")]
         [StringLength(50)]
